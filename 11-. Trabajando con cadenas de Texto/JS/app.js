@@ -101,9 +101,37 @@ console.log(resultado)
 
 //Métodos de transformación
 var mensaje = "Estoy aprendiendo JavaScript";
-var mensaje2 = 'y programación';
+var mensaje2 = ' y programación';
 var total = 1234546;
 
 var resultado;
+//A cadena de texto
+resultado = total.toString();
+console.log(resultado)
+//A minusculas
+resultado = mensaje.toLowerCase();
+console.log(resultado)
+//A mayusculas
+resultado = mensaje.toUpperCase();
+console.log(resultado)
 
-resultado = total;
+//Texto de concatenacion
+resultado = mensaje.concat(mensaje2, ' y tengo muchas ideas');
+console.log(resultado)
+
+//Plantillas y literales
+var lenguaje = 'JavaScript';
+var lenguaje2 = 'HTML';
+var mensaje = `Me gusta ${lenguaje} y su integración con ${lenguaje2}`;
+
+console.log(mensaje);
+
+//Mensaje multilinea
+var mensajeMultilinea =
+    `
+Hola mundo,
+estoy aprendiendo
+${mensaje} y me gusta como se integra con ${mensaje2}
+`;
+
+console.log(mensajeMultilinea)
