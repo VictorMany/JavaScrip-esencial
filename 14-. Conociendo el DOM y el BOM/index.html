@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+</head>
+
+<body>
+    <H1>LOREM IPSUM</H1>
+    <button id="boton">Púlsame</button>
+    <button id="boton2">Mostrar parrafos</button>
+    <button id="boton3">Mostrar parrafos por clase</button>
+    <button id="botonBOM">BOM</button>
+    <p class="principal">Lorem ipsum dolor sit amet consectetur adipisicing elit. At vel tempora magni, suscipit debitis
+        dolorum minus
+        quis tempore corrupti voluptatibus atque deleniti dignissimos numquam molestiae deserunt non error neque sit?
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At vel tempora magni, suscipit debitis dolorum minus
+        quis tempore corrupti voluptatibus atque deleniti dignissimos numquam molestiae deserunt non error neque sit?
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At vel tempora magni, suscipit debitis dolorum minus
+        quis tempore corrupti voluptatibus atque deleniti dignissimos numquam molestiae deserunt non error neque sit?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas minima voluptates corrupti. Provident perspiciatis
+        quisquam ipsa voluptatibus nam dolorem cum neque nobis odio recusandae pariatur repellendus dolore, explicabo
+        corrupti animi!</p>
+
+
+    <script>
+        //Entendiendo el DOM --> modelo del objeto del documento (puente entre html y javascipt) y el BOM
+        var boton = document.getElementById("boton");
+        var boton2 = document.getElementById("boton2");
+        var boton3 = document.getElementById("boton3");
+        var botonBOM = document.getElementById("botonBOM");
+
+        boton.addEventListener('click', function () {
+            //window es del BOM
+            console.log(window.location.href);
+            window.location.href = 'http://github.com';
+        });
+        //BOM = BROWSER OBJECT MODULE
+
+
+        //PROPIEDADES Y METODOS DEL DOM
+        var todosLosParrafos = document.getElementsByTagName('p')
+        boton2.addEventListener('click', function () {
+            //window es del BOM
+            console.log(todosLosParrafos);
+            var foto = document.createElement('img');
+            foto.src =
+                'https://ichef.bbci.co.uk/news/800/cpsprodpb/8536/production/_103520143_gettyimages-908714708.jpg';
+
+            foto.name = 'foto1';
+            foto.width = 400
+            document.body.appendChild(foto);
+        });
+
+        var parrafosPorClase = document.getElementsByClassName('principal')[0].textContent;
+        boton3.addEventListener('click', function () {
+            //window es del BOM
+            console.log(parrafosPorClase);
+            boton3.style.background = 'green'
+            boton3.style.color = 'white'
+            boton3.style.fontSize = '30px'
+        });
+
+
+        //Propiedades y métodos del BOM
+        localStorage.setItem('contenido', 'codigo y café es una gran combinación')
+        var contenido = localStorage.getItem('contenido');
+
+        var parrafosPorClase = document.getElementsByClassName('principal')[0];
+
+        botonBOM.addEventListener('click', function () {
+            console.log('innerWidth: ', window.innerWidth)
+            console.log('innerHeight: ', window.innerHeight)
+            var contenido = localStorage.getItem('contenido');
+            parrafosPorClase.innerHTML = contenido;
+
+            //Avanzar
+            window.history.forward()
+            //Atras en el navegador
+            window.history.back()
+            //Mover en el histórico
+            window.history.go(3)
+        })
+    </script>
+
+
+    <script src="JS/app.js"></script>
+
+</body>
+
+</html>

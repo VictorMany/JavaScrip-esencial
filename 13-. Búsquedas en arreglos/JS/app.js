@@ -18,9 +18,19 @@ console.log(pElegido)
 var menu = [
     { nombre: 'Ceviche', precio: 20, pais: 'Perú' },
     { nombre: 'Tacos', precio: 20, pais: 'México' },
-    { nombre: 'Pasta', precio: 20, pais: 'Italia' }
+    { nombre: 'Quesadillas', precio: 20, pais: 'México' },
+    { nombre: 'Pasta', precio: 19, pais: 'Italia' }
 ]
 var pElegido = menu.find(platillo => platillo.nombre == "Pasta");
+console.log(pElegido);
 
+//Filtrar arreglos--> Crea un arreglo nuevo
+var pElegidos = menu.filter(platillo => platillo.pais == "México");
+console.log(pElegidos);
 
-console.log(pElegido)
+//Validacion de los elementos de un arreglo (minimo uno de los elementos) --> Retorna un booleano
+var resultado = menu.some((platillo) => platillo.precio < 20)
+console.log(resultado)
+//Validacion de los elementos de un arreglo (Todos los elementos) --> Retorna un booleano
+resultado = menu.every(platillo => platillo.precio < 20)
+console.log(resultado)
